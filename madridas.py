@@ -1,14 +1,9 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 
 # Skaityti CSV failą
-df = pd.read_csv('MadridPolution2001-2022.csv')
+file_path = "MadridPolution2001-2022.csv"
+data = pd.read_csv(file_path)
 
-# Vizualizuoti
-plt.plot(df['Time'], df['BEN'], marker='o', label='BEN')
-plt.title('Temperatūros pokytis')
-plt.xlabel('Laikas')
-plt.ylabel('Temperatūra')
-plt.legend()
-plt.grid()
-plt.show()
+# Pateikti pagrindinę informaciją apie duomenis
+print(data.head())  # Pirmi 5 įrašai
+print(data.info())  # Informacija apie stulpelius
